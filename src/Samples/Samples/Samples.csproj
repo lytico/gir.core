@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>..\..\BuildOutput\Samples</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="**\*.glade" />
+    <EmbeddedResource Include="**\*.glade">
+      <LogicalName>%(Filename)%(Extension)</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Testpic.png">
+      <LogicalName>Testpic</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Sections\**\*.cs">
+      <LogicalName>GtkSharp.Samples.%(Filename).cs</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libs\Adw-1\Adw-1.csproj" />
+    <ProjectReference Include="..\..\Libs\Gdk-4.0\Gdk-4.0.csproj" />
+    <ProjectReference Include="..\..\Libs\GdkPixbuf-2.0\GdkPixbuf-2.0.csproj" />
+    <ProjectReference Include="..\..\Libs\Gio-2.0\Gio-2.0.csproj" />
+    <ProjectReference Include="..\..\Libs\GLib-2.0\GLib-2.0.csproj" />
+    <ProjectReference Include="..\..\Libs\GObject-2.0\GObject-2.0.csproj" />
+    <ProjectReference Include="..\..\Libs\Gsk-4.0\Gsk-4.0.csproj" />
+    <ProjectReference Include="..\..\Libs\Gtk-4.0\Gtk-4.0.csproj" />
+    <ProjectReference Include="..\..\Libs\GtkSource-5\GtkSource-5.csproj" />
+    <ProjectReference Include="..\..\Libs\HarfBuzz-0.0\HarfBuzz-0.0.csproj" />
+    <ProjectReference Include="..\..\Libs\Pango-1.0\Pango-1.0.csproj" />
+    <ProjectReference Include="..\..\Libs\PangoCairo-1.0\PangoCairo-1.0.csproj" />
+    <ProjectReference Include="..\..\Libs\Soup-3.0\Soup-3.0.csproj" />
+    <ProjectReference Include="..\..\Libs\WebKit-6.0\WebKit-6.0.csproj" />
+  </ItemGroup>
+</Project>
